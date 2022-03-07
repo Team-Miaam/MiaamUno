@@ -7,7 +7,7 @@ module.exports = {
 	parserOptions: {
 		sourceType: 'module',
 		babelOptions: {
-			configFile: './.babelrc',
+			configFile: './node_modules/miaam-scripts/configs/babelrc.json',
 		},
 	},
 	plugins: ['@babel', 'import', 'prettier'],
@@ -16,5 +16,9 @@ module.exports = {
 		// printWidth rule in prettier is not working
 		'max-len': ['error', { code: 120, tabWidth: 2 }],
 		'import/extensions': ['error', 'always'],
+		'import/no-absolute-path': 0,
+	},
+	globals: {
+		__createChunk__: 'readonly',
 	},
 };
